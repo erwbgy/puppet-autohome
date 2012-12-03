@@ -1,0 +1,5 @@
+# Managed by Puppet
+<% for user in @local_users -%>
+<%= $user %>	-fstype=bind,rw	:<%= @local_home %>/&
+<% end -%>
+*	-fstype=<%= @remote_fstype %>	<%= @remote_home %>/&
