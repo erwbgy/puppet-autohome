@@ -4,11 +4,11 @@ Automount home directories
 
 ## Example
 
-autohome::client::local_users:
-  - oracle
-autohome::client::local_home:    /export/home
-autohome::client::remote_home:   10.7.96.13:/woking/home
-autohome::client::remote_fstype: nfs4
+    autohome::client::local_users:
+      - oracle
+    autohome::client::local_home:    /export/home
+    autohome::client::remote_home:   10.7.96.13:/woking/home
+    autohome::client::remote_fstype: nfs4
 
 ## Credits
 
