@@ -20,7 +20,7 @@ class autohome::client::config (
   file { '/etc/auto.home':
     ensure  => present,
     mode    => '0444',
-    content => template('autohome/client/auto.home'),
+    content => template('autohome/client/auto.home.erb'),
     require => Class['autohome::client::install'],
     notify  => Class['autohome::client::service'],
   }
