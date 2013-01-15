@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Puppet-autohome : Puppet module to configure automount home directories" />
+    <meta name="description" content="Puppet-autohome : Configure automount home directories" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="https://github.com/erwbgy/puppet-autohome">View on GitHub</a>
 
           <h1 id="project_title">Puppet-autohome</h1>
-          <h2 id="project_tagline">Puppet module to configure automount home directories</h2>
+          <h2 id="project_tagline">Configure automount home directories</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/erwbgy/puppet-autohome/zipball/master">Download this project as a .zip file</a>
@@ -35,7 +35,7 @@
 
 <p>Automount home directories</p>
 
-<h2>Example</h2>
+<h2>Example: client</h2>
 
 <pre><code>autohome::client::local_users:
   - oracle
@@ -44,7 +44,27 @@ autohome::client::remote_home:   10.7.96.13:/woking/home
 autohome::client::remote_fstype: nfs4
 </code></pre>
 
-<h2>Credits</h2>
+<h2>autohome::client parameters</h2>
+
+<p><em>auto_home</em>: The base directory under which user automounted home directories
+will be mounted. Default: '/home'</p>
+
+<p><em>local_users</em>: The list of local users who should not have home directories
+automounted</p>
+
+<p><em>local_home</em>: The base directory under which local user home directories are
+located. Default: '/var/local/home'</p>
+
+<p><em>remote_home</em>: The base remote directory to automount from - for example an NFS
+host and path</p>
+
+<p><em>remote_fstype</em>: The remote filesystem type. Default: 'nsf4'</p>
+
+<h2>TODO</h2>
+
+<ul>
+<li>Configure the server side</li>
+</ul><h2>Credits</h2>
 
 <p>This is based on detailed documentation and setup by my colleague Neil
 McBennett.  He did all the hard work, I just puppetised it.</p>
