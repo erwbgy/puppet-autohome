@@ -3,7 +3,6 @@ class autohome::client (
   $local_users   = undef,
   $local_home    = undef,
   $remote_home   = undef,
-  $remote_home   = undef,
   $remote_fstype = undef,
 ) {
   class { 'autohome::client::config':
