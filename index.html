@@ -35,7 +35,14 @@
 
 <p>Automount home directories</p>
 
-<h2>Example: client</h2>
+<h2>Usage: autohome::client</h2>
+
+<p>Include the autohome module in your puppet configuration:</p>
+
+<pre><code>include autohome::client
+</code></pre>
+
+<p>and add required hiera configuration - for example:</p>
 
 <pre><code>autohome::client::local_users:
   - oracle
@@ -44,7 +51,17 @@ autohome::client::remote_home:   10.7.96.13:/woking/home
 autohome::client::remote_fstype: nfs4
 </code></pre>
 
-<h2>autohome::client parameters</h2>
+<p>It can also be used as a parameterised class - for example:</p>
+
+<pre><code>class { 'autohome::client':
+  local_users   =&gt; [ 'oracle' ],
+  local_home    =&gt; '/export/home',
+  remote_home   =&gt; '10.7.16.13:/london/home',
+  remote_fstype =&gt; 'nfs4',
+}
+</code></pre>
+
+<h2>Parameters: autohome::client</h2>
 
 <p><em>auto_home</em>: The base directory under which user automounted home directories
 will be mounted. Default: '/home'</p>
