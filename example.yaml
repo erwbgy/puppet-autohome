@@ -1,5 +1,6 @@
+autohome::client::domain: 'example.com'
 autohome::client::local_users:
-  - oracle
+  - tomcat
 autohome::client::local_home: /export/home
-autohome::client::remote_home: 10.7.96.13:/woking/home
+autohome::client::remote_home: 10.0.96.13:/london/home
 autohome::client::remote_fstype: nfs4

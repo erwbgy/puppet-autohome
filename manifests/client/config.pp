@@ -24,4 +24,13 @@ class autohome::client::config (
     require => Class['autohome::client::install'],
     notify  => Class['autohome::client::service'],
   }
+  if $remote_fstype == 'nfs4' {
+    file { '/etc/idmapd.conf':
+      ensure  => present,
+      mode    => '0644',
+      content => template('autohome/client/idmapd.conf.erb'),
+      require => Class['autohome::client::install'],
+      notify  => Class['autohome::client::service'],
+    }
+  }
 }

@@ -1,0 +1,7 @@
+0.2:
+
+* Configure and manage the NFSv4 name mapping daemon if nfs4 is used
+
+0.1:
+
+* Initial Puppet Forge release
