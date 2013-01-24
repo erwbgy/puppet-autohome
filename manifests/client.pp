@@ -5,9 +5,10 @@ class autohome::client (
   $remote_home   = undef,
   $remote_fstype = undef,
 ) {
+  $_local_users = hiera_array('autohome::client::local_users', $local_users)
   class { 'autohome::client::config':
     auto_home     => $auto_home,
-    local_users   => $local_users,
+    local_users   => $_local_users,
     local_home    => $local_home,
     remote_home   => $remote_home,
     remote_fstype => $remote_fstype,
