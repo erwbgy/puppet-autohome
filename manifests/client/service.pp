@@ -35,7 +35,7 @@ class autohome::client::service {
         }
       }
       default: {
-        warn("$operatingsystem not currently supported")
+        warning("$operatingsystem not currently supported")
       }
     }
   }
