@@ -1,5 +1,6 @@
 class autohome::client::config (
   $remote_home,
+  $domain,
   $auto_home     = '/home',
   $local_users   = [],
   $local_home    = '/var/local/home',
@@ -32,5 +33,9 @@ class autohome::client::config (
       require => Class['autohome::client::install'],
       notify  => Class['autohome::client::service'],
     }
+  }
+  exec { 'create-local-home':
+    command => "/bin/mkdir -p ${local_home}",
+    creates => $local_home,
   }
 }

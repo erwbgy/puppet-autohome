@@ -8,7 +8,7 @@ class autohome::client::service {
   }
   if $::autohome::client::config::remote_fstype == 'nfs4' {
     case $operatingsystem {
-      'RedHat': {
+      'RedHat', 'CentOS': {
         # Ensure that the NFSv4 name mapping daemon is running
         service { 'rpcidmapd':
           ensure     => running,
